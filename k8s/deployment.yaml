@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 444
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 444
+  template:
+    metadata:
+      labels:
+        app: 444
+    spec:
+      containers:
+      - image: okteto.dev/444:latest
+        name: 444
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/FitApp-html.zip"
+        - name: Vless_UUID
+          value: "162948b7-d409-44d8-9906-91ec14bc709d"
+        - name: Vless_Path
+          value: "/abcdefg"
+        - name: Vmess_UUID
+          value: "162948b7-d409-44d8-9906-91ec14bc709d"
+        - name: Vmess_Path
+          value: "/45ry6576i686ut"
+        - name: Share_Path
+          value: "/v2link"
